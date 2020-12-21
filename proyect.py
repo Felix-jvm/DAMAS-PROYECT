@@ -136,7 +136,17 @@ class white(object):
   self.image='☻' 
   self.location=[]
 
- ##### THE MOVE METHOD ##### 
+ ##### THE CALL THE QUEEN METHOD ####  
+
+ def callthequeen(self,vindex,friendclas,queenimage,origin,towards):
+    
+  data[int(self.location[0])][int(self.location[1])] [1]=queen(friendclas,queenimage)
+
+  data[int(self.location[0])][int(self.location[1])] [1].location=self.location
+
+  update(-1,-1,origin,towards)
+
+ ##### THE MOVE METHOD #####
 
  def move(self,origin,towards,become,queenimage,friendclas):
 
