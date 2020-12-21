@@ -157,6 +157,11 @@ def update(start,end,origin,towards):
 
   print(viewer[c])
 
+shift='white'
+upside='black'
+status=['white','black']
+c=0
+
 
 ##### THE WHITE CLASS #####
 
