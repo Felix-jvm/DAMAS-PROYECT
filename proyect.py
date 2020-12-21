@@ -115,3 +115,11 @@ def displaythepieces(clas,name,number,send,receive,start,end):
     counter+=1
                           
  update(start,end,-1,-1)
+
+
+
+displaythepieces(white,'white',12,firstindices,insections,0,2)
+
+insections=[] 
+
+displaythepieces(black,'black',12,secondindices,insections,5,7) 
