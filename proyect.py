@@ -357,6 +357,20 @@ class black(white):
   self.location=[]
 
 
+##### THE QUEEN CLASS #####
+
+class queen(object):
+
+ def __init__(self,friendclas,queenimage):
+   self.name=friendclas
+   self.image=queenimage
+   self.location=[]
+   self.indices=[[],[]]
+   self.steps=[]
+   #self.registry=[]
+   self.lastindex=[]
+
+
 ##### THE DISPLAY THE PIECES FUNCTION #####
 
 def displaythepieces(clas,name,number,send,receive,start,end):
