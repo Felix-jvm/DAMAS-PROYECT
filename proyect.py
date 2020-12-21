@@ -370,6 +370,47 @@ class queen(object):
    #self.registry=[]
    self.lastindex=[]
 
+ 
+
+ ##### THE MOVEQUEEN METHOD #####
+
+ def movequeen(self,origin,towhere):
+
+   output=None
+ 
+   self.indices=[[],[]]
+ 
+   self.steps=[int(towhere[0])-int(origin[0]),int(towhere[1])-int(origin[1])]
+   
+   if int(self.steps[0])>0:
+    for a in range(1,self.steps[0]+1,1):
+     self.indices[0].append(a)
+   else:
+    for e in range(-1,self.steps[0]-1,-1):
+     self.indices[0].append(e)  
+ 
+   if int(self.steps[1])>0:
+    for a in range(1,self.steps[1]+1,1):
+     self.indices[1].append(a)
+   else:
+    for e in range(-1,self.steps[1]-1,-1):
+     self.indices[1].append(e)
+     
+   
+   if len(self.indices[0])==len(self.indices[1]):
+     for u in range(len(self.indices[0])):
+      
+      output=self.checkposition(int(origin[0])+self.indices[0][u],int(origin[1])+self.indices[1][u],origin,towhere) 
+      
+      if output!=None:
+       print(output)
+       output=None
+       return
+       
+   else:
+     print('THE MOVEMENT YOU WANNA DO ISNT ALLOWED')
+
+
 
 ##### THE DISPLAY THE PIECES FUNCTION #####
 
