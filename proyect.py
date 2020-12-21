@@ -127,6 +127,17 @@ secondindices=[
 
 insections=[]
 
+##### THE WHITE CLASS #####
+
+class white(object):
+
+ def __init__(self,name):
+  self.name=name
+  self.image='☻' 
+  self.location=[]
+
+
+
 
 
 ##### THE DISPLAY THE PIECES FUNCTION #####
