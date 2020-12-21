@@ -73,3 +73,30 @@ viewer=[
 
 [[''],['-'],[''],['-'],[''],['-'],[''],['-']]
 ]
+
+
+
+
+##### THE DISPLAY THE PIECES FUNCTION #####
+
+def displaythepieces(clas,name,number,send,receive,start,end):
+ 
+ counter=0
+
+ for a in range(number):
+  receive.append(clas(name+str(a))) 
+ 
+ for l in range(len(send)): 
+
+  for i in range(len(send[l])):
+  
+   if i>0:
+    data[send[l][0]] [send[[l][0]][i]].append (receive[counter])
+    
+    data[send[l][0]] [send[[l][0]][i]].append (receive[counter].image)
+    
+    data[send[l][0]] [send[[l][0]][i]] [1] .location=[str(send[l][0]),str(send[[l][0]] [i] )]
+   
+    counter+=1
+                          
+ update(start,end,-1,-1)
