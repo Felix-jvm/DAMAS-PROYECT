@@ -347,6 +347,15 @@ class white(object):
        print('THE MOVEMENT CANNOT BE ACOMPLISHED')
   
 
+###### THE BLACK CLASS ######
+
+class black(white):
+ 
+ def __init__(self,name):
+  self.name=name
+  self.image='☺'
+  self.location=[]
+
 
 ##### THE DISPLAY THE PIECES FUNCTION #####
 
