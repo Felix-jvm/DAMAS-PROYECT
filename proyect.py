@@ -370,7 +370,81 @@ class queen(object):
    #self.registry=[]
    self.lastindex=[]
 
+ #### THE CHECK POSITION METHOD####
+
+ def checkposition(self,v,h,origin,towhere):   
+  lou=0000
+  
+  global c
+  global status
+  global shift
+  global upside 
+  next=[]
+
+  if len(self.lastindex)<1:
+   self.lastindex=[int(origin[0]),int(origin[1])] 
+
+  #IF THE CURRENT LOCATION ISNT EMPTY THEN IT CHECKS IF THE INSTANCE ON THE CURRENT LOCATION IS A FRIEND INSTANCE OR A RIVAL ONE
+  if len(data[v][h])>1:
+   if self.name in data[v][h] [1].name:
+    
+    return 'THERE IS A PIECE FROM THE SAME TEAM ON THE TOWARDS PLACE'
+   else:
+    #CHECKS IF THE FORWARD INSTANCE CAN BE EATEN 
+    next=[self.indices[0][0],self.indices[1][0]]
+    
+    if v+next[0]<=len(data)-1 and h+next[1]<=len(data[0])-1 and len(data[v+next[0]][h+next[1]])<=1:
+      
+      if shift in self.name:
+
+        data[v+next[0]][h+next[1]]=data[self.lastindex[0]][self.lastindex[1]]
+     
+        data[v+next[0]][h+next[1]] [1].location=[v+next[0],h+next[1]]
+         
+        data[self.lastindex[0]][self.lastindex[1]]=['']
+     
+        #data[int(towhere[0])][int(towhere[1])]=['']
+        
+        data[v][h]=['']
  
+        update(-1,-1,self.lastindex,[v,h])
+        
+        if shift==status[0]:
+          shift=status[1]
+          upside=status[0]
+        else:
+          shift=status[0]
+          upside=status[1] 
+      
+      else:
+        print('IS NOT TURN OF THE '+upside.upper()+' TEAM YET') 
+
+    else:
+    
+     return 'THE CATCH CANNOT BE ACOMPLISHED' 
+
+  else:
+   
+   if shift in self.name:
+   
+    data[v][h]=data[self.lastindex[0]][self.lastindex[1]]
+    data[v][h] [1].location=[v,h]
+    data[int(self.lastindex[0])][int(self.lastindex[1])]=['']
+    update(-1,-1,self.lastindex,-1) 
+    
+    if shift==status[0]:
+      shift=status[1]
+      upside=status[0]
+    else:
+      shift=status[0]
+      upside=status[1]
+
+   else:
+    print('IS NOT TURN OF THE '+upside.upper()+' TEAM YET')
+
+  self.lastindex=[v,h]  
+
+
 
  ##### THE MOVEQUEEN METHOD #####
 
