@@ -74,6 +74,21 @@ viewer=[
 [[''],['-'],[''],['-'],[''],['-'],[''],['-']]
 ]
 
+##### COORDENATES OF WHERE THE INSTANCES OF PAWNS MUST BE ON THE DATA LIST#####
+
+firstindices=[
+         [0,     0, 2, 4, 6],
+         [1,     1, 3, 5, 7],
+         [2,     0, 2, 4, 6],
+] 
+
+secondindices=[
+          [5,     1,3,5,7],
+          [6,     0,2,4,6],
+          [7,     1,3,5,7],             
+]
+
+insections=[]
 
 
 
