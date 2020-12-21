@@ -136,8 +136,175 @@ class white(object):
   self.image='☻' 
   self.location=[]
 
+ ##### THE MOVE METHOD ##### 
+
+ def move(self,origin,towards,become,queenimage,friendclas):
+
+  global status
+  global shift
+  global upside
+
+  if 'black' in self.name:
+
+   ##IF THE PIECE ON THE ORIGIN INDEX IS A BLACK INSTANCE THEN THIS BLOCK OF CODE IS EXECUTED   
+    if int(origin[0])-int(towards[0])==1:
+     
+      if int(towards[1])-int(origin[1])==1 or int(towards[1])-int(origin[1])==-1:
+  
+        if len(data[int(towards[0])][int(towards[1])])>1:
+  
+            if data[int(towards[0])][int(towards[1])] [1].image==self.image:  
+             
+              print('IT IS FROM THE SAME TEAM')
+           
+            else:
+
+              if int(towards[0])-1>=0 and int(towards[0])-1<=len(data)-1 and int(towards[1])+(int(towards[1])-int(origin[1]))>=0 and int(towards[1])+(int(towards[1])-int(origin[1]))<=len(data[0])-1 and len(data[int(towards[0])
+              -1][int(towards[1])+(int(towards[1])-int(origin[1]))])<=1:
+
+                if shift in self.name:  
+                
+                    data[int(towards[0])-1][int(towards[1])+(int(towards[1])-int(origin[1]))]=data[int(origin   [0])]  [int(origin[1])] 
+     
+                    data[int(towards[0])-1][int(towards[1])+(int(towards[1])-int(origin[1]))] [1].location=[int   (towards[0])-1,int(towards[1])+(int(towards[1])-int(origin[1]))] 
+                    
+                    data[int(origin[0])][int(origin[1])]=['']
+     
+                    data[int(towards[0])][int(towards[1])]=['']
+   
+                    if self.location==become:
+   
+                     self.callthequeen(0,'black',queenimage,origin,towards) 
+                  
+                    update(-1,-1,origin,towards) 
+                    
+                    if shift==status[0]:
+                     shift=status[1]
+                     upside=status[0]
+                    else:
+                     shift=status[0]
+                     upside=status[1]  
+
+                else:
+                  print('IS NOT TURN OF THE '+upside.upper()+' TEAM YET') 
+                
+
+              else:
+               print('THE CATCH CANNOT BE ACOMPLISHED') 
+
+        else:
+         
+         if shift in self.name:
+
+           data[int(towards[0])][int(towards[1])]=data[int(origin[0])][int(origin[1])]
+           
+           data[int(towards[0])][int(towards[1])] [1].location=[towards[0],towards[1]]
+           
+           data[int(origin[0])][int(origin[1])]=['']
+   
+           if self.location==become:
+   
+            self.callthequeen(0,'black',queenimage,origin,-1) 
+           
+           update(-1,-1,origin,-1)
+
+           if shift==status[0]:
+             shift=status[1]
+             upside=status[0]
+           else:
+             shift=status[0]
+             upside=status[1]
+
+         else:
+          print('IS NOT TURN OF THE '+upside.upper()+' TEAM YET') 
 
 
+      else:
+       print('THE MOVEMENT CANNOT BE ACOMPLISEHD')
+    
+    else:
+     print('THE MOVEMENT CANNOT BE ACOMPLISHED') 
+
+
+
+  elif 'white' in self.name:
+  
+ ##IF THE PIECE ON THE ORIGIN INDEX IS A WHITE INSTANCE THEN THIS BLOCK OF CODE IS EXECUTED 
+   if int(origin[0])-int(towards[0])==-1:
+    
+     if int(towards[1])-int(origin[1])==1 or int(towards[1])-int(origin[1])==-1: 
+        
+        if len(data[int(towards[0])][int(towards[1])])>1:
+
+          if data[int(towards[0])][int(towards[1])] [1].image==self.image:
+
+            print('IT IS FROM THE SAME TEAM')
+          
+          else:
+
+            if int(towards[0])+1>=0 and int(towards[0])+1<=len(data)-1 and int(towards[1])+(int(towards[1])-int(origin[1]))>=0 and int(towards[1])+(int(towards[1])-int(origin[1]))<=len(data[0])-1 and len(data[int(towards[0])+1][int(towards[1])+(int(towards[1])-int(origin[1]))])<=1:
+
+              if shift in self.name:
+
+                 data[int(towards[0])+1][int(towards[1])+(int(towards[1])-int(origin[1]))]=data[int(origin[0] )][int(origin[1])]  
+ 
+                 data[int(towards[0])+1][int(towards[1])+(int(towards[1])-int(origin[1]))] [1].location=[int (towards[0])+1,int(towards[1])+(int(towards[1])-int(origin[1]))]
+ 
+                 data[int(origin[0])][int(origin[1])]=['']
+                 
+                 data[int(towards[0])][int(towards[1])]=['']
+                  
+                 if self.location==become:
+                   
+                   self.callthequeen(7,'white',queenimage,origin,towards)
+                 
+                 update(-1,-1,origin,towards)
+                 
+                 if shift==status[0]:
+                   shift=status[1]
+                   upside=status[0]
+                 else:
+                   shift=status[0]
+                   upside=status[1]
+                
+              else:
+               print('IS NOT TURN OF THE '+upside.upper()+' TEAM YET')
+               
+            else:
+               print('THE CATCH CANNOT BE ACOMPLISHED')   
+
+        else:
+       
+         if shift in self.name:
+
+           data[int(towards[0])][int(towards[1])]=data[int(origin[0])][int(origin[1])]
+           
+           data[int(towards[0])][int(towards[1])] [1].location=[towards[0],towards[1]]
+           
+           data[int(origin[0])][int(origin[1])]=[''] 
+ 
+           if self.location==become:
+  
+            self.callthequeen(7,'white',queenimage,origin,-1) 
+          
+           update(-1,-1,origin,-1) 
+
+           if shift==status[0]:
+             shift=status[1]
+             upside=status[0]
+           else:
+             shift=status[0]
+             upside=status[1]
+
+         else:
+          print('IS NOT TURN OF THE '+upside.upper()+' TEAM YET') 
+
+     else:
+       print('THE MOVEMENT CANNOT BE ACOMPLISEHD')           
+
+   else:
+       print('THE MOVEMENT CANNOT BE ACOMPLISHED')
+  
 
 
 ##### THE DISPLAY THE PIECES FUNCTION #####
