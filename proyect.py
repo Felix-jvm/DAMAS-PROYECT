@@ -74,6 +74,43 @@ viewer=[
 [[''],['-'],[''],['-'],[''],['-'],[''],['-']]
 ]
 
+##### THE CHECK METHOD #####
+
+def check(origin,towards):
+ 
+ 
+  if len(origin)==2 and int(origin[0])>=0 and int(origin[0])<=len(data)-1 and int(origin[1])>=0  and int(origin[1]) <=len(data[0])-1: 
+   
+   if len(towards)==2 and int(towards[0])>=0 and int(towards[0])<=len(data)-1 and int(towards[1])>=0 and int(towards [1])<=len(data[0])-1:
+    
+     if len(data[int(origin[0])][int(origin[1])])>1:
+      
+      if data[int(origin[0])][int(origin[1])] [1].image=='♛':
+ 
+       data[int(origin[0])][int(origin[1])] [1].movequeen(origin,towards)
+      
+      elif data[int(origin[0])][int(origin[1])] [1].image=='♕':
+       
+       data[int(origin[0])][int(origin[1])] [1].movequeen(origin,towards)
+      
+      elif data[int(origin[0])][int(origin[1])] [1].image=='☻':
+ 
+       #data[int(origin[0])][int(origin[1])] [1].move(origin,towards,1,1,7,'♛','white') 
+       data[int(origin[0])][int(origin[1])] [1].move(origin,towards,7,'♛','white') 
+      else:
+       data[int(origin[0])][int(origin[1])] [1].move(origin,towards,0,'♕','black') 
+       #data[int(origin[0])][int(origin[1])] [1].move(origin,towards,-1,1,0,'♕','black')
+ 
+     else:
+      print('THE ORIGIN IS CURRENTLY EMPTY')
+   else:
+    print('THERE IS SOMETHING WRONG WITH THE TOWARDS NUMBER') 
+         
+  else:
+   print('THERE IS SOMETHING WRONG WITH THE ORIGIN NUMBER')
+
+
+
 ##### COORDENATES OF WHERE THE INSTANCES OF PAWNS MUST BE ON THE DATA LIST#####
 
 firstindices=[
