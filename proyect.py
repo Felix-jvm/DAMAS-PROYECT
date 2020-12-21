@@ -127,6 +127,37 @@ secondindices=[
 
 insections=[]
 
+##### THE UPDATE FUNCTION #####
+
+def update(start,end,origin,towards):                                        
+ 
+ os.system('clear')
+
+ for c in range(len(data)):
+
+  for e in data[c]:                 
+   
+   if start>-1 and end>-1: 
+    
+    if c>=start and c<=end and len(e)>1:
+      viewer[int(e[1].location[0])][int(e[1].location[1])]=[e[1].image]
+
+   elif len(e)>1:
+    
+    viewer[int(e[1].location[0])][int(e[1].location[1])]=[e[1].image]
+    
+    
+   if origin!=-1:
+    if len(data[int(origin[0])][int(origin[1])])<=1: 
+     viewer[int(origin[0])][int(origin[1])]=[''] 
+    
+  if towards!=-1 and len(data[int(towards[0])][int(towards[1])])<=1:
+   
+   viewer[int(towards[0])][int(towards[1])]=[''] 
+
+  print(viewer[c])
+
+
 ##### THE WHITE CLASS #####
 
 class white(object):
