@@ -218,7 +218,7 @@ class white(object):
      
                     data[int(towards[0])][int(towards[1])]=['']
    
-                    if self.location==become:
+                    if int(self.location[0])==become:
    
                      self.callthequeen(0,'black',queenimage,origin,towards) 
                   
@@ -248,7 +248,7 @@ class white(object):
            
            data[int(origin[0])][int(origin[1])]=['']
    
-           if self.location==become:
+           if int(self.location[0])==become:
    
             self.callthequeen(0,'black',queenimage,origin,-1) 
            
@@ -300,7 +300,7 @@ class white(object):
                  
                  data[int(towards[0])][int(towards[1])]=['']
                   
-                 if self.location==become:
+                 if int(self.location[0])==become:
                    
                    self.callthequeen(7,'white',queenimage,origin,towards)
                  
@@ -329,7 +329,7 @@ class white(object):
            
            data[int(origin[0])][int(origin[1])]=[''] 
  
-           if self.location==become:
+           if int(self.location[0])==become:
   
             self.callthequeen(7,'white',queenimage,origin,-1) 
           
